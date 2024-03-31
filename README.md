@@ -23,7 +23,7 @@ To train our SAFER model on dataset(NELL, FB15K-237, ConceptNet):
 
 Run
 
-    ```python main.py --use_atten True --use_pretrain_node_emb True --dataset <dataset> --device 0 --step pretrain2 -prev_state_dir_model2 <dataset>/train_1/checkpoint.ckpt --train_num 1 -epo 20000 ```
+    python main.py --use_atten True --use_pretrain_node_emb True --dataset <dataset> --device 0 --step pretrain2 -prev_state_dir_model2 <dataset>/train_1/checkpoint.ckpt --train_num 1 -epo 20000 
 
 ## 4. Evaluation
 
@@ -31,7 +31,7 @@ To test the trained SAFER model:
 
 Run
 
-    ```python main.py --use_atten True --use_pretrain_node_emb True --dataset <dataset> --device 0 --step model2 -prev_state_dir_model2 <dataset>/train_1/checkpoint.ckpt```
+    python main.py --use_atten True --use_pretrain_node_emb True --dataset <dataset> --device 0 --step model2 -prev_state_dir_model2 <dataset>/train_1/checkpoint.ckpt
 
 ## 5. Acknowledgment
 
