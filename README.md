@@ -3,10 +3,8 @@
 
 The codes are associated with the following paper:
 
->**Few-shot Knowledge Graph Relational Reasoning via Subgraph Adaptation,** 
-
->Haochen Liu, Song Wang, Chen Chen, Jundong Li,
-
+>**Few-shot Knowledge Graph Relational Reasoning via Subgraph Adaptation,**     
+>Haochen Liu, Song Wang, Chen Chen, Jundong Li,     
 >Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2024.
 
 ## 1. Environments
