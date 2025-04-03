@@ -148,7 +148,8 @@ class Trainer:
             
             query_ans_list, negative_ans_list, query_sim_train, negative_sim_train = self.model2_ex(eval_task, iseval=False, is_eval_loss = True , curr_rel=curr_rel, trial = trial, best_params = best_params)
             #query_ans_list_for_supports_sim, negative_ans_list_for_supports_sim, query_ans_list_for_supports_cla, negative_ans_list_for_supports_cla, query_sim_train, negative_sim_train, query_cla_train, negative_cla_train = self.model2_ex(eval_task, iseval=False, is_eval_loss = True , curr_rel=curr_rel, trial = trial, best_params = best_params)
-            
+            #if query_ans_list==0:
+            #    continue
             x = torch.cat([negative_ans_list.reshape(len(curr_rel), -1), query_ans_list.reshape(1, -1)], 1)
             for idx in range(x.shape[0]):
                 t += 1

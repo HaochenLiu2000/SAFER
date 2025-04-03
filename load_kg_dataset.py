@@ -598,6 +598,8 @@ class SubgraphFewshotDataset(Dataset):
         ### extract subgraphs     
         support_subgraphs = []
         query_subgraphs = []
+        #print(self.few)
+        #print(curr_tasks_idx)
         for idx, i in enumerate(curr_tasks_idx):  
 
             if self.mode == "test" and self.inductive:
@@ -636,7 +638,7 @@ class SubgraphFewshotDataset(Dataset):
                 support_negative_subgraphs.append(subgraph_neg)
             else:
                 negative_subgraphs.append(subgraph_neg)
-
+        #exit()
         return support_triples, support_subgraphs, support_negative_triples, support_negative_subgraphs, query_triples, query_subgraphs, negative_triples, negative_subgraphs, curr_rel
         
         
@@ -652,7 +654,7 @@ class SubgraphFewshotDataset(Dataset):
         
         # get support triples
         support_triples_idx = np.arange(0, len(curr_task), 1)[:self.few]
-        support_triples_idx = np.array([2,4])
+        #support_triples_idx = np.array([2,4])
         support_triples = []
         support_subgraphs = []
         for idx, i in enumerate(support_triples_idx):  
@@ -662,7 +664,10 @@ class SubgraphFewshotDataset(Dataset):
             else:
                 subgraph_pos = all_pos_graphs[i]
             support_subgraphs.append(subgraph_pos)     
-        
+        #print(len(curr_task))
+        #print(support_triples_idx)
+        #print(self.few)
+        #print(support_subgraphs)
         query_triples = [query_triple]
         query_subgraphs = []
         
@@ -699,7 +704,7 @@ class SubgraphFewshotDataset(Dataset):
         for idx, i in enumerate(negative_triples_idx):  
             negative_triples.append(curr_task_50neg[i])
             negative_subgraphs.append(all_50_neg_graphs[i])
-
+        #exit()
         return support_triples, support_subgraphs, support_negative_triples, support_negative_subgraphs, query_triples, query_subgraphs, negative_triples, negative_subgraphs, curr_rel
 
     

@@ -7,6 +7,10 @@ The codes are associated with the following paper:
 >Haochen Liu, Song Wang, Chen Chen, Jundong Li,     
 >Annual Conference of the North American Chapter of the Association for Computational Linguistics (NAACL), 2024.
 
+<p align="center">
+<img src="SAFER.png" alt="Overview of SAFER." width="100%" />
+</p>
+
 ## 1. Environments
 
 To install requirements:
@@ -37,7 +41,22 @@ Run
 
 Our code is based on the code of [CSR](https://github.com/snap-stanford/csr). Thanks to the authors and developers!
 
-
+## 6. Citation
+If you find this work is helpful to your research, please consider citing our paper:
+```
+@inproceedings{liu-etal-2024-shot,
+    title = "Few-shot Knowledge Graph Relational Reasoning via Subgraph Adaptation",
+    author = "Liu, Haochen and Wang, Song and Chen, Chen and Li, Jundong",
+    editor = "Duh, Kevin and Gomez, Helena and Bethard, Steven",
+    booktitle = "Proceedings of the 2024 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 1: Long Papers)",
+    month = jun,
+    year = "2024",
+    address = "Mexico City, Mexico",
+    publisher = "Association for Computational Linguistics",
+    pages = "3346--3356",
+}
+```
+**Thanks for your interest in our work!**
 
 
 

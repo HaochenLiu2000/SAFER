@@ -429,6 +429,8 @@ class mix_model2(nn.Module):
         few=len(support_subgraphs)
         num_q=len(query_subgraphs)
         num_n=len(negative_subgraphs)
+        #print('support',support_subgraphs)
+        #print('query',query_subgraphs)
         #print(few,num_q,num_n)
         
         #note the number of nodes
@@ -456,6 +458,9 @@ class mix_model2(nn.Module):
         negative_node_embedding = self.node_embedding(negative_subgraphs_mix.x_id)
         
         
+        #print(few)
+        #if few!=3:
+        #    return 0,0,0,0
         #new emb in 3 supports
         #first step of weight calculation
         graph_emb, _, _ = self.weight.embedding_learner.rgcn(support_subgraphs_mix)
@@ -653,7 +658,7 @@ class mix_model2(nn.Module):
             node_rep, edge_attr_negative_emb = self.embedding_mix[j](change,is_support,head_idxs_negative_mix,tail_idxs_negative_mix, x, negative_subgraphs_mix.edge_index,  edge_attr_negative_emb, edgemask ,int(sum(batch_num_nodes_negative)),support_mix_tail_output[j])
             edge_attr_negative_emb = self.gnn_non_linear(edge_attr_negative_emb)              
         
-        tail_emb_negative=torch.index_select(node_rep,0,tail_idxs_negative_mix.long())#.mean(dim=0)     
+        tail_emb_negative=torch.index_select(node_rep,0,tail_idxs_negative_mix.long())
         pooled = []
         pooled.append(tail_emb_negative)
         pooled.append(support_node_embedding[tail_idxs_support,:].mean(dim=0).unsqueeze(0).expand(num_n,-1))
